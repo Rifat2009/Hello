@@ -1,8 +1,35 @@
 
 #include "TXLib.h"
 
+
+    void drawDialog()
+    {
+        txSetColor(RGB(255,255,255));//получилось и говорит мама
+        txSetFillColor(RGB(255,255,255));
+        txEllipse(380,90,510,160);
+        txSetColor(TX_BLACK);
+        txSelectFont ("Comic Sans MS", 20);
+        txDrawText(380,90,510,160, "Ты где гулял?");
+
+        txSetColor(RGB(255,255,255));// говорю я
+        txSetFillColor(RGB(255,255,255));
+        txEllipse(510,220,630,275);
+        txSetColor(TX_BLACK);
+        txSelectFont ("Comic Sans MS", 20);
+        txDrawText(510,220,630,275, "Около школы");
+
+        txSetColor(RGB(255,255,255));// говорит папа
+        txSetFillColor(RGB(255,255,255));
+        txEllipse(530,145,680,210);
+        txSetColor(TX_BLACK);
+        txSelectFont ("Comic Sans MS", 15);
+        txDrawText(530,145,680,210,  "Я выходил тебя не видел");
+
+
+    }
     void drawinterer()
-{  //room all
+    {
+     //room all
    txSetColor(TX_WHITE);//получилось
    txSetFillColor(RGB(0,219,109));
    txRectangle(0,0,800,600);
@@ -42,6 +69,15 @@
    txLine(320,260,300,250);//нога левая
    txLine(310,225,300,280);//нога правая продолжение
    txLine(300,250,280,285);//нога левая продолжение
+   //подушка
+   txSetColor(TX_BLACK);//получилось
+   txSetFillColor(RGB(186,173,101));
+   txEllipse(490,215,545,260);
+   txLine(495,240,425,250);//тело
+   txLine(495,240,475,260);//правая рука
+   txLine(495,240,460,235);//левая рука
+   txLine(425,250,390,270);//правая нога
+   txLine(425,250,345,235);//левая нога
 }
      void drawCloud(int x)
     {
@@ -54,28 +90,19 @@
     void drawFon()
     {
       txSetColor(TX_BLACK);
-
       txSetFillColor(RGB(7,11,78));
-
       txRectangle(1,1,800,600);
     }
     void drawDom()
     {
       txSetColor(TX_BLACK);//home
-
       txSetFillColor(RGB(149,230,125));
-
       txRectangle (155,120,550,435);
-
       POINT star [3] = {{350,3}, {155,120}, {550,120}};//kрыша
       txPolygon(star,3);
-
       txSetFillColor(TX_BLUE);//окно
-
       txRectangle(206,164,348,277);
-
       txSetFillColor(TX_GRAY);//дверь
-
       txRectangle(430,260,540,430);
     }
     void drawDver(int x_dver,int y_dver)
@@ -98,17 +125,13 @@
     void drawSun (int x)
     {
       txSetColor(TX_YELLOW);
-
       txSetFillColor(TX_YELLOW);
-
       txCircle(x,100,50);//sun
     }
     void drawTrava()
     {
     txSetColor(TX_GREEN);
-
     txSetFillColor(TX_GREEN);
-
     txRectangle(3,435,800,600);
     }
     int main()
@@ -197,6 +220,7 @@
       {
           //txBegin();
           drawinterer();
+          drawDialog();
           drawMan(xMan);
       }
       txTextCursor(false);
