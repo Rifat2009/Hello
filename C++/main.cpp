@@ -24,8 +24,6 @@
         txSetColor(TX_BLACK);
         txSelectFont ("Comic Sans MS", 15);
         txDrawText(530,145,680,210,  "Я выходил тебя не видел");
-
-
     }
     void drawinterer()
     {
@@ -78,6 +76,26 @@
    txLine(495,240,460,235);//левая рука
    txLine(425,250,390,270);//правая нога
    txLine(425,250,345,235);//левая нога
+   //книги
+   txSetColor(TX_BLACK);//получилось
+   txSetFillColor(RGB(7,55,248));
+   txRectangle(0,115,15,155);
+   txRectangle(30,120,65,155);
+   txRectangle(0,200,25,255);
+   txRectangle(45,230,100,255);
+   //матрешка
+   txSetColor(TX_BLACK);//получилось
+   txSetFillColor(RGB(207,16,16));
+   txCircle(110,105,17);
+   txCircle(110,135,17);
+   //портфель
+     txSetColor(TX_BLACK);//получилось
+     txSetFillColor(RGB(207,16,16));
+     txArc (700, 260, 730, 290, 0, 180);//ручка
+     txRectangle(680,275,755,350);
+     txRectangle(680,290,705,345);//ручка левая
+     txRectangle(730,290,755,350);//ручка правая
+
 }
      void drawCloud(int x)
     {
@@ -96,9 +114,11 @@
     void drawDom()
     {
       txSetColor(TX_BLACK);//home
-      txSetFillColor(RGB(149,230,125));
+      txSetFillColor(RGB(236,9,20));
       txRectangle (155,120,550,435);
-      POINT star [3] = {{350,3}, {155,120}, {550,120}};//kрыша
+      txSetColor(TX_BLACK);//kрыша
+      txSetFillColor(RGB(117,106,105));
+      POINT star [3] = {{350,3}, {155,120}, {550,120}};
       txPolygon(star,3);
       txSetFillColor(TX_BLUE);//окно
       txRectangle(206,164,348,277);
