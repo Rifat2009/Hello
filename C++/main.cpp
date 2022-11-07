@@ -1,7 +1,33 @@
 
 #include "TXLib.h"
+    void drawPlayground()
+    {
+    //песочница
+    txSetColor(TX_RED,5);//получилось
+    txSetFillColor(RGB(255,242,0));
+    txRectangle(30,450,260,600);
+    //игрушки
+    txSetColor(TX_BLACK);//получилось
+    txSetFillColor(RGB(0,0,0));
+    txRectangle(275,485,310,525);
+    txSetColor(TX_BLACK);//получилось
+    txSetFillColor(RGB(255,255,255));
+    txRectangle(275,485,295,505);
+    txSetColor(TX_BLACK);//получилось
+    txSetFillColor(RGB(251,0,6));
+    txRectangle(310,505,365,525);
+    txSetColor(TX_BLACK);//получилось
+    txSetFillColor(RGB(0,0,0));
+    txCircle(300,535,10);
+    txCircle(350,535,10);
+    //грабли
+    txLine(225,565,225,475);
+    txLine(205,480,200,510);
+    txLine(245,480,240,480);
+    txLine(240,480,200,510);
 
 
+    }
     void drawDialog()
     {
         txSetColor(RGB(255,255,255));//получилось и говорит мама
@@ -176,6 +202,7 @@
 
           drawDom();
           drawDver(x_dver,y_dver);
+          drawPlayground();
           drawMan(xMan);
 
           x_dver -= 2;
@@ -193,6 +220,7 @@
           drawCloud(xCloud);
 
           drawDom();
+          drawPlayground();
           drawDver(x_dver,y_dver);
           drawMan(xMan);
 
@@ -210,6 +238,7 @@
           drawCloud(xCloud);
 
           drawDom();
+          drawPlayground();
           drawMan(xMan);
 
             drawDver(x_dver,y_dver);
@@ -229,6 +258,7 @@
           drawCloud(xCloud);
 
           drawDom();
+          drawPlayground();
           drawDver(x_dver,y_dver);
           xSun = xSun+5;
           xCloud = xCloud +10;
