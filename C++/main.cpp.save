@@ -143,6 +143,8 @@
    txSetFillColor(RGB(207,16,16));
    txCircle(110,105,17);
    txCircle(110,135,17);
+   //глаза матрешки
+   //txSetPixel (, double y, COLORREF color, HDC dc=txDC())
    //портфель
      txSetColor(TX_BLACK);//получилось
      txSetFillColor(RGB(207,16,16));
@@ -239,7 +241,7 @@
           txSleep(2);
           txEnd();
       }
-      while (xMan > 480)//человек иде к двире
+      while (xMan > 480)//человек идет к двире
       {
           txBegin();
           drawFon();
