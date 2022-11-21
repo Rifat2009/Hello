@@ -1,6 +1,5 @@
 
 #include "TXLib.h"
-
     void drawPlayground()
     {
     //песочница
@@ -11,51 +10,42 @@
     txSetColor(TX_BLACK);//получилось
     txSetFillColor(RGB(0,0,0));
     txRectangle(75,485,110,525);
-
     txSetColor(TX_BLACK);//получилось
     txSetFillColor(RGB(255,255,255));
     txRectangle(75,485,95,505);
-
     txSetColor(TX_BLACK);//получилось
     txSetFillColor(RGB(251,0,6));
     txRectangle(110,505,165,525);
-
     txSetColor(TX_BLACK);//получилось
     txSetFillColor(RGB(0,0,0));
     txCircle(100,535,10);
     txCircle(150,535,10);
     //грабли
-    txLine(225,565,225,475);
-    txLine(205,480,205,510);
-    txLine(245,480,245,510);
-    txLine(245,510,205,510);
+    txLine(225,565,225,475);//середина
+    txLine(205,475,205,500);//левая палка
+    txLine(240,475,240,500);//правая штука
+    txLine(205,500,240,500);//соединяет все палки
     //ракета
-      txSetColor(TX_BLACK);//левое крыло
-      txSetFillColor(RGB(236,0,6));
-      POINT leftkralo [3] = {{310,475}, {275,520}, {310,520}};
-      txPolygon(leftkralo,3);
-
-      txSetColor(TX_BLACK);//правое крыло
-      txSetFillColor(RGB(236,0,6));
-      POINT rightkralo [3] = {{365,475}, {400,520}, {365,520}};
-      txPolygon(rightkralo,3);
-
-      txSetColor(TX_BLACK);//верхняя штука
-      txSetFillColor(RGB(19,44,217));
-      POINT toppiece [3] = {{310,460}, {340,425}, {365,460}};
-      txPolygon(toppiece,3);
-
-      txSetColor(TX_BLACK);//верхняя штука
-      txSetFillColor(RGB(7,228,24));
-      txRectangle(310,460,365,550);
-      txLine(365,550,380,575);
-      txLine(380,575,290,575);
-      txLine(290,575,310,550);
-      txSetColor(TX_BLACK);//верхняя штука
-      txSetFillColor(RGB(37,218,200));
-      txCircle(340,500,20);
-
-
+        txSetColor(TX_BLACK);
+    txSetFillColor(RGB(251,0,6));
+    txRectangle(345,435,420,545);//основание получилось
+        txSetColor(TX_BLACK);
+    txSetFillColor(RGB(9,3,203));
+          POINT rightkralo [3] = {{345,455}, {305,505}, {345,500}};
+      txPolygon(rightkralo,3);//крыло правое получилось
+          txSetColor(TX_BLACK);
+    txSetFillColor(RGB(9,3,203));
+            POINT leftkralo [3] = {{420,450}, {460,495}, {420,495}};
+      txPolygon(leftkralo,3);//крыло левое получилось
+          txSetColor(TX_BLACK);
+    txSetFillColor(RGB(9,3,203));
+            POINT shtyka [3] = {{345,435}, {380,390}, {420,435}};
+      txPolygon(shtyka,3);//верхняя штука получилось
+          txSetColor(TX_BLACK);
+    txSetFillColor(RGB(251,0,6));
+          txSetColor(TX_BLACK);//получилось
+    txSetFillColor(RGB(111,196,145));
+      txCircle(380,480,25);
     }
     void drawDialog()
     {
@@ -73,12 +63,12 @@
         txSelectFont ("Comic Sans MS", 20);
         txDrawText(510,220,630,275, "Около школы");
 
-        txSetColor(RGB(255,255,255));// говорит папа
-        txSetFillColor(RGB(255,255,255));
-        txEllipse(530,145,680,210);
-        txSetColor(TX_BLACK);
-        txSelectFont ("Comic Sans MS", 15);
-        txDrawText(530,145,680,210,  "Что будешь кушать?");
+        //txSetColor(RGB(255,255,255));// говорит папа
+        //txSetFillColor(RGB(255,255,255));
+        //txEllipse(530,145,680,210);
+        //txSetColor(TX_BLACK);
+        //txSelectFont ("Comic Sans MS", 15);
+        //txDrawText(530,145,680,210,  "Я выходил тебя не видел");
     }
     void drawinterer()
     {
@@ -209,6 +199,20 @@
     txSetFillColor(TX_GREEN);
     txRectangle(3,435,800,600);
     }
+    void drawTitrs(int y)
+    {
+        drawFon();
+        txSetColor(TX_WHITE);
+        txSelectFont ("Comic Sans MS", 40);
+        txDrawText   (0, y, 800, y+350, "Я-это прогулявший человек,\n"
+                                            " Мама-сидит на диване,\n\n"
+                                            " Папа-лежит на диване,\n\n\n"
+                                            " Остальные предметы ради украшения,\n\n\n\n"
+                                            " Приятного просмотра!,\n\n\n\n\n");
+
+
+    }
+
     int main()
     {
       txCreateWindow(800,600);
@@ -218,6 +222,17 @@
       int xMan = 700;
       int x_dver = 540;
       int y_dver = 260;
+      int y_text = 250;
+
+    while(y_text>-300)
+    {
+        drawTitrs(y_text);
+        y_text-=5;
+        txSleep(10);
+    }
+
+     txSleep(5000);
+
 
       while (x_dver > 480)//вроде открывающаяся дверь
       {
