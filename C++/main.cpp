@@ -30,17 +30,17 @@
     txSetFillColor(RGB(251,0,6));
     txRectangle(345,435,420,545);//основание получилось
         txSetColor(TX_BLACK);
+          txSetColor(TX_BLACK);//крыло правое получилось
     txSetFillColor(RGB(9,3,203));
-          POINT rightkralo [3] = {{345,455}, {305,505}, {345,500}};
-      txPolygon(rightkralo,3);//крыло правое получилось
-          txSetColor(TX_BLACK);
-    txSetFillColor(RGB(9,3,203));
-            POINT leftkralo [3] = {{420,450}, {460,495}, {420,495}};
-      txPolygon(leftkralo,3);//крыло левое получилось
-          txSetColor(TX_BLACK);
+          POINT rightkralo [3] = {{420,455}, {460,500}, {420,500}};
+      txPolygon(rightkralo,3);
+    txSetFillColor(RGB(9,3,203));//крыло левое получилось
+            POINT leftkralo [3] = {{345,455}, {305,500}, {345,500}};
+      txPolygon(leftkralo,3);
+          txSetColor(TX_BLACK);//верхняя штука получилось
     txSetFillColor(RGB(9,3,203));
             POINT shtyka [3] = {{345,435}, {380,390}, {420,435}};
-      txPolygon(shtyka,3);//верхняя штука получилось
+      txPolygon(shtyka,3);
           txSetColor(TX_BLACK);
     txSetFillColor(RGB(251,0,6));
           txSetColor(TX_BLACK);//получилось
@@ -143,14 +143,22 @@
      txRectangle(680,275,755,350);
      txRectangle(680,290,705,345);//ручка левая
      txRectangle(730,290,755,350);//ручка правая
-     //бабушкин ковер
+     //бабушкин ковер1
      txRectangle(85,365,360,555);//самый большой
-     txRectangle(115,395,180,440);//левый
+     txRectangle(120,385,180,440);//левый
      txRectangle(120,470,180,520);//левый нижний
-     txRectangle(260,470,320,525);//правый нижний
-     txRectangle(260,385,320,435);//правый
+     txRectangle(260,470,320,520);//правый нижний
+     txRectangle(260,385,320,440);//правый
      txLine(180,440,260,470);//от левого до к правому праавому
      txLine(260,440,180,470);//от правого до к левому нижнему
+          //бабушкин ковер2
+     txRectangle(520,365,790,555);//самый большой
+     txRectangle(555,385,615,440);//левый
+     txRectangle(555,470,615,520);//левый нижний
+     txRectangle(695,470,755,520);//правый нижний
+     txRectangle(695,385,755,440);//правый
+     txLine(615,440,695,470);//от левого до к правому праавому
+     txLine(695,440,615,470);//от правого до к левому нижнему
 }
      void drawCloud(int x)
     {
