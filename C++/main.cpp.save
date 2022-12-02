@@ -1,6 +1,5 @@
 
 #include "TXLib.h"
-
     void drawPlayground()
     {
     //песочница
@@ -11,51 +10,45 @@
     txSetColor(TX_BLACK);//получилось
     txSetFillColor(RGB(0,0,0));
     txRectangle(75,485,110,525);
-
     txSetColor(TX_BLACK);//получилось
     txSetFillColor(RGB(255,255,255));
     txRectangle(75,485,95,505);
-
     txSetColor(TX_BLACK);//получилось
     txSetFillColor(RGB(251,0,6));
     txRectangle(110,505,165,525);
-
     txSetColor(TX_BLACK);//получилось
     txSetFillColor(RGB(0,0,0));
     txCircle(100,535,10);
     txCircle(150,535,10);
     //грабли
-    txLine(225,565,225,475);
-    txLine(205,480,205,510);
-    txLine(245,480,245,510);
-    txLine(245,510,205,510);
+    txLine(225,565,225,475);//середина
+    txLine(205,475,205,500);//левая палка
+    txLine(240,475,240,500);//правая штука
+    txLine(205,500,240,500);//соединяет все палки
     //ракета
-      txSetColor(TX_BLACK);//левое крыло
-      txSetFillColor(RGB(236,0,6));
-      POINT leftkralo [3] = {{310,475}, {275,520}, {310,520}};
-      txPolygon(leftkralo,3);
-
-      txSetColor(TX_BLACK);//правое крыло
-      txSetFillColor(RGB(236,0,6));
-      POINT rightkralo [3] = {{365,475}, {400,520}, {365,520}};
+        txSetColor(TX_BLACK);
+    txSetFillColor(RGB(251,0,6));
+    txRectangle(345,435,420,545);//основание получилось
+        txSetColor(TX_BLACK);
+          txSetColor(TX_BLACK);//крыло правое получилось
+    txSetFillColor(RGB(9,3,203));
+          POINT rightkralo [3] = {{420,455}, {460,500}, {420,500}};
       txPolygon(rightkralo,3);
-
-      txSetColor(TX_BLACK);//верхняя штука
-      txSetFillColor(RGB(19,44,217));
-      POINT toppiece [3] = {{310,460}, {340,425}, {365,460}};
-      txPolygon(toppiece,3);
-
-      txSetColor(TX_BLACK);//верхняя штука
-      txSetFillColor(RGB(7,228,24));
-      txRectangle(310,460,365,550);
-      txLine(365,550,380,575);
-      txLine(380,575,290,575);
-      txLine(290,575,310,550);
-      txSetColor(TX_BLACK);//верхняя штука
-      txSetFillColor(RGB(37,218,200));
-      txCircle(340,500,20);
-
-
+    txSetFillColor(RGB(9,3,203));//крыло левое получилось
+            POINT leftkralo [3] = {{345,455}, {305,500}, {345,500}};
+      txPolygon(leftkralo,3);
+          txSetColor(TX_BLACK);//верхняя штука получилось
+    txSetFillColor(RGB(9,3,203));
+            POINT shtyka [3] = {{345,435}, {380,390}, {420,435}};
+      txPolygon(shtyka,3);
+          txSetColor(TX_BLACK);
+    txSetFillColor(RGB(251,0,6));
+          txSetColor(TX_BLACK);//получилось
+    txSetFillColor(RGB(111,196,145));
+      txCircle(380,480,25);
+      txLine(345,545,320,575);
+      txLine(320,575,445,575);
+      txLine(445,575,420,545);
     }
     void drawDialog()
     {
@@ -73,12 +66,12 @@
         txSelectFont ("Comic Sans MS", 20);
         txDrawText(510,220,630,275, "Около школы");
 
-        txSetColor(RGB(255,255,255));// говорит папа
-        txSetFillColor(RGB(255,255,255));
-        txEllipse(530,145,680,210);
-        txSetColor(TX_BLACK);
-        txSelectFont ("Comic Sans MS", 15);
-        txDrawText(530,145,680,210,  "Что будешь кушать?");
+        //txSetColor(RGB(255,255,255));// говорит папа
+        //txSetFillColor(RGB(255,255,255));
+        //txEllipse(530,145,680,210);
+        //txSetColor(TX_BLACK);
+        //txSelectFont ("Comic Sans MS", 15);
+        //txDrawText(530,145,680,210,  "Я выходил тебя не видел");
     }
     void drawinterer()
     {
@@ -143,8 +136,6 @@
    txSetFillColor(RGB(207,16,16));
    txCircle(110,105,17);
    txCircle(110,135,17);
-   //глаза матрешки
-   //txSetPixel (, double y, COLORREF color, HDC dc=txDC())
    //портфель
      txSetColor(TX_BLACK);//получилось
      txSetFillColor(RGB(207,16,16));
@@ -152,7 +143,22 @@
      txRectangle(680,275,755,350);
      txRectangle(680,290,705,345);//ручка левая
      txRectangle(730,290,755,350);//ручка правая
-
+     //бабушкин ковер1
+     txRectangle(85,365,360,555);//самый большой
+     txRectangle(120,385,180,440);//левый
+     txRectangle(120,470,180,520);//левый нижний
+     txRectangle(260,470,320,520);//правый нижний
+     txRectangle(260,385,320,440);//правый
+     txLine(180,440,260,470);//от левого до к правому праавому
+     txLine(260,440,180,470);//от правого до к левому нижнему
+          //бабушкин ковер2
+     txRectangle(520,365,790,555);//самый большой
+     txRectangle(555,385,615,440);//левый
+     txRectangle(555,470,615,520);//левый нижний
+     txRectangle(695,470,755,520);//правый нижний
+     txRectangle(695,385,755,440);//правый
+     txLine(615,440,695,470);//от левого до к правому праавому
+     txLine(695,440,615,470);//от правого до к левому нижнему
 }
      void drawCloud(int x)
     {
@@ -209,8 +215,42 @@
     {
     txSetColor(TX_GREEN);
     txSetFillColor(TX_GREEN);
-    txRectangle(3,435,800,600);
+    txRectangle(0,435,800,600);
     }
+    void drawTitrs(int y)
+    {
+        drawFon();
+        txSetColor(TX_WHITE);
+        txSelectFont ("Comic Sans MS", 40);
+        txDrawText   (0, y, 800, y+1200, " я случайно прогулял,\n"
+                                            //" В главных ролях,\n"
+                                            //" Я-это прогулявший человек,\n"
+                                            //" Мама-сидит на диване\n"
+                                            //" Папа-лежит на диване\n"
+                                            // " Остальные предметы ради украшения\n"
+                                            // " Все действия выполнениы профисионалами!\n"
+                                            // " Создано по реальным действиям!\n"
+                                            " Приятного просмотра!\n");
+
+
+    }
+    void drawKonec(int y)
+    {
+    drawFon();
+        txSetColor(TX_WHITE);
+        txSelectFont ("Comic Sans MS", 40);
+        txDrawText   (0, y, 800, y+1200, " В главных ролях,\n"
+                                            " Я-это прогулявший человек,\n"
+                                            " Мама-сидит на диване\n"
+                                            " Папа-лежит на диване\n"
+                                            " Остальные предметы ради украшения\n"
+                                            " Все действия выполнениы профисионалами!\n"
+                                            " Создано по реальным действиям!\n"
+                                            );
+
+
+    }
+
     int main()
     {
       txCreateWindow(800,600);
@@ -220,6 +260,18 @@
       int xMan = 700;
       int x_dver = 540;
       int y_dver = 260;
+      int y_text = 250;
+      int x_text = 250;
+
+    while(y_text>-400)
+    {
+        drawTitrs(y_text);
+        y_text-=5;
+        txSleep(10);
+    }
+
+     txSleep(5000);
+
 
       while (x_dver > 480)//вроде открывающаяся дверь
       {
@@ -241,7 +293,7 @@
           txSleep(2);
           txEnd();
       }
-      while (xMan > 480)//человек идет к двире
+      while (xMan > 480)//человек иде к двире
       {
           txBegin();
           drawFon();
@@ -303,7 +355,17 @@
           drawinterer();
           drawDialog();
           drawMan(xMan);
+          txSleep(5000);
       }
-      txTextCursor(false);
-      return 0;
+    while(x_text>-400)
+    {
+        drawKonec(x_text);
+        x_text-=5;
+        txSleep(10);
     }
+
+
+
+  txTextCursor(false);
+  return 0;
+}

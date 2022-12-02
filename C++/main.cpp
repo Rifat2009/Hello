@@ -223,14 +223,30 @@
         txSetColor(TX_WHITE);
         txSelectFont ("Comic Sans MS", 40);
         txDrawText   (0, y, 800, y+1200, " я случайно прогулял,\n"
-                                            " В главных ролях,\n"
+                                            //" В главных ролях,\n"
+                                            //" Я-это прогулявший человек,\n"
+                                            //" Мама-сидит на диване\n"
+                                            //" Папа-лежит на диване\n"
+                                            // " Остальные предметы ради украшения\n"
+                                            // " Все действия выполнениы профисионалами!\n"
+                                            // " Создано по реальным действиям!\n"
+                                            " Приятного просмотра!\n");
+
+
+    }
+    void drawKonec(int y)
+    {
+    drawFon();
+        txSetColor(TX_WHITE);
+        txSelectFont ("Comic Sans MS", 40);
+        txDrawText   (0, y, 800, y+1200, " В главных ролях,\n"
                                             " Я-это прогулявший человек,\n"
                                             " Мама-сидит на диване\n"
                                             " Папа-лежит на диване\n"
                                             " Остальные предметы ради украшения\n"
                                             " Все действия выполнениы профисионалами!\n"
                                             " Создано по реальным действиям!\n"
-                                            " Приятного просмотра!\n");
+                                            );
 
 
     }
@@ -245,6 +261,7 @@
       int x_dver = 540;
       int y_dver = 260;
       int y_text = 250;
+      int x_text = 250;
 
     while(y_text>-400)
     {
@@ -338,7 +355,17 @@
           drawinterer();
           drawDialog();
           drawMan(xMan);
+          txSleep(5000);
       }
-      txTextCursor(false);
-      return 0;
+    while(x_text>-400)
+    {
+        drawKonec(x_text);
+        x_text-=5;
+        txSleep(10);
     }
+
+
+
+  txTextCursor(false);
+  return 0;
+}
