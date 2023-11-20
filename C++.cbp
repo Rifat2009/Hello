@@ -32,7 +32,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="buttom.cpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="picture.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

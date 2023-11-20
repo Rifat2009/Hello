@@ -1,4 +1,21 @@
 # depslib dependency file v1.0
-1668170393 source:d:\hello\c++\main.cpp
+1700233334 source:d:\hello\c++\main.cpp
+	"TXLib.h"
+	"buttom.cpp"
+	"picture.cpp"
+	<fstream>
+	<stdio.h>
+	<dirent.h>
+
+1700234963 source:d:\hello\c++\buttom.cpp
+	"TXLib.h"
+
+1700234963 d:\hello\c++\buttom.cpp
+	"TXLib.h"
+
+1700234964 d:\hello\c++\picture.cpp
+	"TXLib.h"
+
+1700234964 source:d:\hello\c++\picture.cpp
 	"TXLib.h"
 

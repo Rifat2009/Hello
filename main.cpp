@@ -1,300 +1,276 @@
-
 #include "TXLib.h"
-    void drawPlayground()
-    {
-    //песочница
-    txSetColor(TX_RED,5);//получилось
-    txSetFillColor(RGB(255,242,0));
-    txRectangle(30,450,260,600);
-    //игрушки
-    txSetColor(TX_BLACK);//получилось
-    txSetFillColor(RGB(0,0,0));
-    txRectangle(75,485,110,525);
-    txSetColor(TX_BLACK);//получилось
-    txSetFillColor(RGB(255,255,255));
-    txRectangle(75,485,95,505);
-    txSetColor(TX_BLACK);//получилось
-    txSetFillColor(RGB(251,0,6));
-    txRectangle(110,505,165,525);
-    txSetColor(TX_BLACK);//получилось
-    txSetFillColor(RGB(0,0,0));
-    txCircle(100,535,10);
-    txCircle(150,535,10);
-    //грабли
-    txLine(225,565,225,475);//середина
-    txLine(205,475,205,500);//левая палка
-    txLine(240,475,240,500);//правая штука
-    txLine(205,500,240,500);//соединяет все палки
-    //ракета
-        txSetColor(TX_BLACK);//получилось
-    txSetFillColor(RGB(251,0,6));
-    txRectangle(345,435,420,545);//основание
-        txSetColor(TX_BLACK);//получилось
-    txSetFillColor(RGB(251,0,6));
-          POINT rightkralo [3] = {{345,455}, {305,505}, {345,500}};
-      txPolygon(rightkralo,3);//крыло правое
-          txSetColor(TX_BLACK);//получилось
-    txSetFillColor(RGB(251,0,6));
-            POINT leftkralo [3] = {{420,450}, {460,495}, {420,495}};
-      txPolygon(leftkralo,3);//крыло левое
-          txSetColor(TX_BLACK);//получилось
-    txSetFillColor(RGB(251,0,6));
-            POINT shtyka [3] = {{345,435}, {380,390}, {420,435}};
-      txPolygon(shtyka,3);//верхняя штука
-          txSetColor(TX_BLACK);//получилось
-    txSetFillColor(RGB(251,0,6));
-      txLine(345,545,315,580);
-      txLine(315,580,440,580);
-      txLine(440,580,420,545);
-          txSetColor(TX_BLACK);//получилось
-    txSetFillColor(RGB(251,0,6));
-      txCircle(380,480,25);
-    }
-    void drawDialog()
-    {
-        txSetColor(RGB(255,255,255));//получилось и говорит мама
-        txSetFillColor(RGB(255,255,255));
-        txEllipse(380,90,510,160);
-        txSetColor(TX_BLACK);
-        txSelectFont ("Comic Sans MS", 20);
-        txDrawText(380,90,510,160, "Ты где гулял?");
+#include "buttom.cpp"
+#include "picture.cpp"
+#include <fstream>
+#include <stdio.h>
+#include <dirent.h>
 
-        txSetColor(RGB(255,255,255));// говорю я
-        txSetFillColor(RGB(255,255,255));
-        txEllipse(510,220,630,275);
-        txSetColor(TX_BLACK);
-        txSelectFont ("Comic Sans MS", 20);
-        txDrawText(510,220,630,275, "Около школы");
+using namespace std;
 
-        txSetColor(RGB(255,255,255));// говорит папа
-        txSetFillColor(RGB(255,255,255));
-        txEllipse(530,145,680,210);
-        txSetColor(TX_BLACK);
-        txSelectFont ("Comic Sans MS", 15);
-        txDrawText(530,145,680,210,  "Я выходил тебя не видел");
-    }
-    void drawinterer()
-    {
-     //room all
-   txSetColor(TX_WHITE);//получилось
-   txSetFillColor(RGB(0,219,109));
-   txRectangle(0,0,800,600);
-   //попробуем сделать диван
-   txSetColor(TX_BLACK);//получилось
-   txSetFillColor(RGB(234,220,94));
-   txRectangle(180,180,555,355);
-   txRectangle(180,260,555,355);
-   //штука для дивана
-   txSetColor(TX_BLACK);//получилось
-   txSetFillColor(RGB(159,179,159));
-   txRectangle(350,295,390,325);
-   //пол
-   txSetColor(TX_BLACK);//получилось
-   txSetFillColor(RGB(116,58,58));
-   txRectangle(0,350,800,600);
-   //шкаф
-   txSetColor(TX_BLACK);//получилось
-   txSetFillColor(RGB(162,142,64));
-   txRectangle(0,75,170,350);
-   txLine(0,155,170,155);
-   txLine(0,255,170,255);
-   //стол
-   txSetColor(TX_BLACK);//получилось
-   txSetFillColor(RGB(203,198,167));
-   txLine(565,220,745,220);
-   txLine(565,220,565,350);
-   txLine(745,220,745,350);
-   //человек сидящий на диване ногу на ногу
-   txSetColor(TX_BLACK);//получилось
-   txSetFillColor(RGB(186,173,101));
-   txCircle(355,160,20);//голова
-   txLine(350,180,320,260);//тело
-   txLine(345,180,300,215);//рука левая
-   txLine(350,235,350,180);//рука правая
-   txLine(320,260,310,225);//нога правая
-   txLine(320,260,300,250);//нога левая
-   txLine(310,225,300,280);//нога правая продолжение
-   txLine(300,250,280,285);//нога левая продолжение
-   //подушка
-   txSetColor(TX_BLACK);//получилось
-   txSetFillColor(RGB(186,173,101));
-   txEllipse(490,215,545,260);
-   txLine(495,240,425,250);//тело
-   txLine(495,240,475,260);//правая рука
-   txLine(495,240,460,235);//левая рука
-   txLine(425,250,390,270);//правая нога
-   txLine(425,250,345,235);//левая нога
-   //книги
-   txSetColor(TX_BLACK);//получилось
-   txSetFillColor(RGB(7,55,248));
-   txRectangle(0,115,15,155);
-   txRectangle(30,120,65,155);
-   txRectangle(0,200,25,255);
-   txRectangle(45,230,100,255);
-   //матрешка
-   txSetColor(TX_BLACK);//получилось
-   txSetFillColor(RGB(207,16,16));
-   txCircle(110,105,17);
-   txCircle(110,135,17);
-   //портфель
-     txSetColor(TX_BLACK);//получилось
-     txSetFillColor(RGB(207,16,16));
-     txArc (700, 260, 730, 290, 0, 180);//ручка
-     txRectangle(680,275,755,350);
-     txRectangle(680,290,705,345);//ручка левая
-     txRectangle(730,290,755,350);//ручка правая
+int get_w(string adress)
+{
+    FILE *f1 = fopen(adress.c_str(), "rb");
+    unsigned char headerinfo[54];
+    fread(headerinfo, sizeof(unsigned char), 54, f1);
+    int w = *(int *)&headerinfo[18];
 
+    return w;
 }
-     void drawCloud(int x)
-    {
-     txSetColor(RGB(62,197,255));
-     txSetFillColor(RGB(62,197,255));
-     txEllipse(x+410-410,50,x+580-410,120);
-     txEllipse(x+530-410,50,x+660-410,120);
-     txEllipse(x+610-410,50,x+780-410,120);
-    }
-    void drawFon()
-    {
-      txSetColor(TX_BLACK);
-      txSetFillColor(RGB(7,11,78));
-      txRectangle(1,1,800,600);
-    }
-    void drawDom()
-    {
-      txSetColor(TX_BLACK);//home
-      txSetFillColor(RGB(236,9,20));
-      txRectangle (155,120,550,435);
-      txSetColor(TX_BLACK);//kрыша
-      txSetFillColor(RGB(117,106,105));
-      POINT star [3] = {{350,3}, {155,120}, {550,120}};
-      txPolygon(star,3);
-      txSetFillColor(TX_BLUE);//окно
-      txRectangle(206,164,348,277);
-      txSetFillColor(TX_GRAY);//дверь
-      txRectangle(430,260,540,430);
-    }
-    void drawDver(int x_dver,int y_dver)
-     {
-      txSetFillColor(RGB(130,0,0));//дверь
-      POINT Dver[4] = {{430,260}, { x_dver, y_dver}, { x_dver, y_dver+170} , {430 , 430}};
-      txPolygon (Dver, 4);
-     }
-    void drawMan(int x)
-    {
-      txSetColor(TX_BLACK);
-      txSetFillColor(RGB(186,173,101));
-      txLine(x+670-705,435,x+705-705,380);//нога1
-      txLine(x+730-705,435,x+705-705,380);//нога2
-      txLine(x+705-705,380,x+705-705,295);//тело
-      txLine(x+665-705,345,x+705-705,295);//рука1
-      txLine(x+730-705,340,x+705-705,295);//рука2
-      txCircle(x+705-705,290,20); //человек
-    }
-    void drawSun (int x)
-    {
-      txSetColor(TX_YELLOW);
-      txSetFillColor(TX_YELLOW);
-      txCircle(x,100,50);//sun
-    }
-    void drawTrava()
-    {
-    txSetColor(TX_GREEN);
-    txSetFillColor(TX_GREEN);
-    txRectangle(3,435,800,600);
-    }
-    int main()
-    {
-      txCreateWindow(800,600);
 
-      int xSun = 100;
-      int xCloud = 50;
-      int xMan = 700;
-      int x_dver = 540;
-      int y_dver = 260;
+int get_h(string adress)
+{
+    FILE *f1 = fopen(adress.c_str(), "rb");
+    unsigned char headerinfo[54];
+    fread(headerinfo, sizeof(unsigned char), 54, f1);
+    int h = *(int *)&headerinfo[22];
 
-      while (x_dver > 480)//вроде открывающаяся дверь
+    return h;
+}
+
+int readFromDir(string adress, Picture menuPic[], int count_pic)
+{
+    DIR *dir;
+    struct dirent *ent;
+    int X = 20;
+    int Y = 100;
+    if ((dir = opendir (adress.c_str())) != NULL)
+    {
+      while ((ent = readdir (dir)) != NULL)
       {
-          txBegin();
-          drawFon();
-
-
-          drawTrava();
-          drawSun(xSun);
-          drawCloud(xCloud);
-
-          drawDom();
-          drawDver(x_dver,y_dver);
-          drawPlayground();
-          drawMan(xMan);
-
-          x_dver -= 2;
-          y_dver += 2;
-          txSleep(2);
-          txEnd();
+        if((string)ent->d_name != "." && (string)ent->d_name != "..")
+        {
+            if(Y<=550 && X == 20)
+            {
+                X = 20;
+            }
+            else if (Y>550)
+            {
+                X = 120;
+                Y = 100;
+            }
+            menuPic[count_pic].x = X;
+            menuPic[count_pic].y = Y;
+            menuPic[count_pic].adress = adress + (string)ent->d_name;
+            count_pic++;
+            Y += 150;
+        }
       }
-      while (xMan > 480)//человек иде к двире
-      {
-          txBegin();
-          drawFon();
-
-          drawTrava();
-          drawSun(xSun);
-          drawCloud(xCloud);
-
-          drawDom();
-          drawPlayground();
-          drawDver(x_dver,y_dver);
-          drawMan(xMan);
-
-          xMan = xMan - 10;
-          txSleep(15);
-          txEnd();
-      }
-      while (x_dver < 540)//вроде открывающаяся дверь
-      {
-          txBegin();
-          drawFon();
-
-          drawTrava();
-          drawSun(xSun);
-          drawCloud(xCloud);
-
-          drawDom();
-          drawPlayground();
-          drawMan(xMan);
-
-            drawDver(x_dver,y_dver);
-
-          x_dver += 2;
-          y_dver -= 2;
-          txSleep(2);
-          txEnd();
-      }
-      while (xCloud < 500)//солнце с облокам бегут
-      {
-          txBegin();
-          drawSun(xSun);
-
-          drawFon();
-          drawTrava();
-          drawCloud(xCloud);
-
-          drawDom();
-          drawPlayground();
-          drawDver(x_dver,y_dver);
-          xSun = xSun+5;
-          xCloud = xCloud +10;
-          txSleep(15);
-          txEnd();
-      }
-
-      //while (xMan > 480)
-      {
-          //txBegin();
-          drawinterer();
-          drawDialog();
-          drawMan(xMan);
-      }
-      txTextCursor(false);
-      return 0;
+      closedir (dir);
     }
+
+    return count_pic;
+}
+
+int main()
+{
+    txCreateWindow (1200, 700);
+    txDisableAutoPause();
+    txTextCursor (false);
+    int count_btn = 7;
+    int count_pic = 0;
+    int nCentralPic = 0;
+    char str[100];
+
+
+    Button btn[count_btn];
+    btn[0] = {50, "Персонаж", "Персонаж"};
+    btn[1] = {200, "Одежда", "Одежда"};
+    btn[2] = {350, "Голов. уборы", "Уборы"};
+    btn[3] = {500, "Обувь", "Обувь"};
+    btn[4] = {650, "Акксесуары", "Акксесуары"};
+    btn[5] = {800, "Сумки", "Сумки"};
+    btn[6] = {950, "Животные", "Животные"};
+
+
+    //Информационная поддержка
+
+
+    Picture menuPic[100];
+
+    count_pic = readFromDir("Pictures/Персонаж/", menuPic, count_pic);
+    count_pic = readFromDir("Pictures/Одежда/", menuPic, count_pic);
+    count_pic = readFromDir("Pictures/Уборы/", menuPic, count_pic);
+    count_pic = readFromDir("Pictures/Обувь/", menuPic, count_pic);
+    count_pic = readFromDir("Pictures/Акксесуары/", menuPic, count_pic);
+    count_pic = readFromDir("Pictures/Сумки/", menuPic, count_pic);
+    count_pic = readFromDir("Pictures/Животные/", menuPic, count_pic);
+
+    for(int i=0; i<count_pic; i++)
+    {
+        menuPic[i].pic = txLoadImage(menuPic[i].adress.c_str());
+
+        menuPic[i].w = get_w(menuPic[i].adress);
+        menuPic[i].h = get_h(menuPic[i].adress);
+
+        menuPic[i].visible = false;
+
+        string str = menuPic[i].adress;
+        int pos1 = str.find("/");
+        int pos2 = str.find("/", pos1+1);
+        menuPic[i].category = str.substr(pos1+1, pos2-pos1-1);
+
+        if(menuPic[i].category == "Уборы" || menuPic[i].category == "Акксесуары")
+        {
+            menuPic[i].w_scr = menuPic[i].w/2;
+            menuPic[i].h_scr = menuPic[i].h/2;
+        }
+        else
+        {
+            menuPic[i].w_scr = menuPic[i].w/3;
+            menuPic[i].h_scr = menuPic[i].h/3;
+        }
+    }
+
+    Picture centrPic[100];
+
+    int vybor = -1;
+    bool mouse_click = false;
+
+    while(!GetAsyncKeyState (VK_ESCAPE))
+    {
+        txBegin();
+        txSetColor(TX_YELLOW);
+        txSetFillColor(TX_YELLOW);
+        txClear();
+
+        //РИСОВАНИЕ КНОПОК
+        for(int i=0; i<count_btn; i++)
+        {
+            btn[i].draw();
+        }
+
+        //МЕНЮ
+        for(int i=0; i<count_pic; i++)
+        {
+            menuPic[i].draw();
+        }
+
+        for(int i=0; i<nCentralPic; i++)
+        {
+            centrPic[i].draw();
+        }
+
+        //видимость центральных картинок типа планировка
+        for(int ib=0; ib<count_btn; ib++)
+        {
+            if(btn[ib].click())
+            {
+                for(int ip=0; ip<count_pic; ip++)
+                {
+                    menuPic[ip].visible = false;
+                    if(menuPic[ip].category == btn[ib].category)
+                    {
+                        menuPic[ip].visible = true;
+                    }
+                }
+            }
+        }
+
+        for(int npic=0; npic<count_pic; npic++)
+        {
+            if(menuPic[npic].click() && menuPic[npic].visible)
+            {
+                while(txMouseButtons() == 1)
+                {
+                    txSleep(10);
+                }
+
+                centrPic[nCentralPic] = {200, 100,
+                                            menuPic[npic].adress,
+                                            menuPic[npic].pic,
+                                            menuPic[npic].w,
+                                            menuPic[npic].h,
+                                            menuPic[npic].w,
+                                            menuPic[npic].h,
+                                            menuPic[npic].visible,
+                                            menuPic[npic].category};
+                nCentralPic ++;
+            }
+
+        }
+
+        for(int i=0; i<nCentralPic; i++)
+        {
+            if(centrPic[i].click() && centrPic[i].visible)
+                {
+                    vybor = i;
+                    mouse_click = false;
+                }
+        }
+
+
+        if(vybor>=0)
+        {
+             if(GetAsyncKeyState (VK_LEFT))
+             {
+                centrPic[vybor].x -= 5;
+             }
+             if(GetAsyncKeyState (VK_RIGHT))
+             {
+                centrPic[vybor].x += 5;
+             }
+             if(GetAsyncKeyState (VK_UP))
+             {
+                centrPic[vybor].y -= 5;
+             }
+             if(GetAsyncKeyState (VK_DOWN))
+             {
+                centrPic[vybor].y += 5;
+             }
+             if(GetAsyncKeyState (VK_OEM_PLUS) || GetAsyncKeyState (VK_ADD))
+             {
+                centrPic[vybor].w_scr = centrPic[vybor].w_scr * 1.1;
+                centrPic[vybor].h_scr = centrPic[vybor].h_scr * 1.1;
+             }
+             if(GetAsyncKeyState (VK_OEM_MINUS) || GetAsyncKeyState (VK_SUBTRACT))
+             {
+                centrPic[vybor].w_scr = centrPic[vybor].w_scr * 0.9;
+                centrPic[vybor].h_scr = centrPic[vybor].h_scr * 0.9;
+             }
+        }
+
+        if(vybor>=0)
+        {
+            if(txMouseButtons() == 1 && !mouse_click)
+            {
+                centrPic[vybor].x = txMouseX() - centrPic[vybor].w_scr/2;
+                centrPic[vybor].y = txMouseY() - centrPic[vybor].h_scr/2;
+            }
+            else
+            {
+                if(txMouseButtons() != 1)
+                {
+                    mouse_click = true;
+                }
+            }
+        }
+
+        if(vybor>=0 && GetAsyncKeyState (VK_DELETE))
+        {
+            centrPic[vybor] = centrPic[nCentralPic-1];
+            nCentralPic--;
+            vybor = -1;
+            mouse_click = true;
+        }
+
+
+
+        txEnd();
+        txSleep(50);
+    }
+
+    for(int i=0; i<count_pic; i++)
+    {
+        txDeleteDC (menuPic[i].pic);
+    }
+
+    for(int i=0; i<nCentralPic; i++)
+    {
+        txDeleteDC (centrPic[i].pic);
+    }
+
+
+return 0;
+}
+
+
